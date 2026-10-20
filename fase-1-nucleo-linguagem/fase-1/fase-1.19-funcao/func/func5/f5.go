@@ -1,3 +1,7 @@
+package main
+
+import "fmt"
+
 func cresce(s []int) {
 	s = append(s, 7)
 }
