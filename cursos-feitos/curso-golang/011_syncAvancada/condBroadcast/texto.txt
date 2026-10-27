@@ -1,0 +1,42 @@
+{ // bloco de escopo
+		logf("=== Signal ===")
+		var (
+			qtdWorker = 4
+			trava     = NovaTrava()
+			wg        sync.WaitGroup
+		)
+		wg.Add(qtdWorker)
+
+		for i := 1; i <= qtdWorker; i++ {
+			go worker(i, trava, &wg)
+		}
+		time.Sleep(time.Millisecond * 500)
+		trava.mu.Lock()
+		trava.liberada = true
+		logf("trava liberada")
+		trava.cond.Signal()
+		trava.mu.Unlock()
+
+		time.Sleep(time.Millisecond * 500)
+		trava.mu.Lock()
+		trava.liberada = true
+		logf("trava liberada")
+		trava.cond.Signal()
+		trava.mu.Unlock()
+
+		time.Sleep(time.Millisecond * 500)
+		trava.mu.Lock()
+		trava.liberada = true
+		logf("trava liberada")
+		trava.cond.Signal()
+		trava.mu.Unlock()
+
+		time.Sleep(time.Millisecond * 500)
+		trava.mu.Lock()
+		trava.liberada = true
+		logf("trava liberada")
+		trava.cond.Signal()
+		trava.mu.Unlock()
+		wg.Wait()
+	}
+
