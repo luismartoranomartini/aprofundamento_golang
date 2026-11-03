@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"testing"
 )
 
@@ -18,4 +19,17 @@ func TestEntrarComVaga(t *testing.T) {
 	}
 	return
 
+}
+
+func TestEntrarSemVaga(t *testing.T) {
+	var alvo ErrSemVaga
+	repo := &RepoFalso{map[int]Vaga{1: Vaga{ID: 1, Ocupada: true}}}
+	g := &Garagem{entrada: repo}
+
+	_, err := g.entrar("ABC1234")
+
+	if !errors.As(err, &alvo) {
+		t.Fatalf("erro: %v", err)
+	}
+	return
 }
