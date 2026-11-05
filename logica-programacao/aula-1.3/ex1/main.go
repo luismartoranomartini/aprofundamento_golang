@@ -2,16 +2,13 @@ package main
 
 import "fmt"
 
-func idadeValida(idade int) string {
-	if idade > 0 {
-		return "Idade válida"
-	} else {
-		return "idade inválida"
-	}
+func par(n int) bool {
+	return n%2 == 0
 }
 
 func main() {
-	fmt.Println(idadeValida(10))
-
-	fmt.Println(idadeValida(-10))
+	fmt.Println(par(2))
+	fmt.Println(par(3))
+	fmt.Println(par(4))
+	fmt.Println(par(5))
 }
