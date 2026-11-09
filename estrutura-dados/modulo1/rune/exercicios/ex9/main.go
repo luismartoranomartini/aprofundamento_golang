@@ -6,7 +6,7 @@ import "fmt"
 
 func ContemNaoASCII(s string) bool {
 	for _, r := range s {
-		if r >= 127 {
+		if r > 127 {
 			return true
 		}
 	}

@@ -14,6 +14,8 @@ func ehPalindromo(s string) bool {
 }
 
 func main() {
-	s := "1aç"
-	fmt.Println(ehPalindromo(s))
+	fmt.Println(ehPalindromo("çaç"))
+	fmt.Println(ehPalindromo("ação"))
+	fmt.Println(ehPalindromo(""))
+	fmt.Println(ehPalindromo("x"))
 }
