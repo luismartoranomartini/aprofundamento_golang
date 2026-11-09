@@ -18,10 +18,12 @@ func main() {
 	n := "abca"
 	v := ""
 	x := "x"
+	d := "çaç"
 
 	fmt.Println(ehPalindromo(s))
 	fmt.Println(ehPalindromo(nome))
 	fmt.Println(ehPalindromo(n))
 	fmt.Println(ehPalindromo(v))
 	fmt.Println(ehPalindromo(x))
+	fmt.Println(ehPalindromo(d))
 }
