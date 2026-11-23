@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func interseccao(a, b []int) []int {
-	jaEntrou := make(map[int]bool)
 	unicos := make(map[int]bool)
 	var guarda []int
 
@@ -12,9 +11,9 @@ func interseccao(a, b []int) []int {
 	}
 
 	for _, x := range a {
-		if unicos[x] == true && jaEntrou[x] == false {
+		if unicos[x] {
 			guarda = append(guarda, x)
-			jaEntrou[x] = true
+			unicos[x] = false
 		}
 	}
 
